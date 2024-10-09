@@ -1,9 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lidapi.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon lidapi.js"
   },
   "keywords": [],
   "author": "",

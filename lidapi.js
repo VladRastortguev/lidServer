@@ -12,7 +12,7 @@ app.use(cookiePareser())
 app.use(cors({
     credentials: true
 }))
-app.use('/api', router)
+app.use('/lidapi', router)
 
 const start = async () => {
     try { 
