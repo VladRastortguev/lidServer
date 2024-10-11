@@ -10,7 +10,8 @@ const app = express()
 app.use(express.json())
 app.use(cookiePareser())
 app.use(cors({
-    credentials: true
+    credentials: true,
+    origin: '*'
 }))
 app.use('/lidapi', router)
 
