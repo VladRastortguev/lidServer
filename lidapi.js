@@ -1,28 +1,41 @@
-require('dotenv').config()
-const express = require('express')
-const cors = require('cors')
-const cookiePareser = require('cookie-parser')
-const router = require('./router')
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const router = require('./router');
 
-const PORT = process.env.PORT || 5001
-const app = express()
+const PORT = process.env.PORT || 5001;
+const app = express();
 
-app.use(express.json())
-app.use(cookiePareser())
+// Настройка CORS
+const allowedOrigins = ['https://www.kia-bishkek.kg/'];
 app.use(cors({
     credentials: true,
-    origin: '*'
-}))
-app.use('/lidapi', router)
-
-const start = async () => {
-    try { 
-        app.listen(5001, () => {
-            console.log(`Server started on PORT = ${PORT}`);            
-        })
-    } catch (e) {
-        console.log(e);        
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
     }
-}
+}));
 
-start()
+// Middleware
+app.use(express.json());
+app.use(cookieParser());
+
+// Маршруты
+app.use('/lidapi', router);
+
+// Запуск сервера
+const start = async () => {
+    try {
+        app.listen(PORT, () => {
+            console.log(`Server started on PORT = ${PORT}`);
+        });
+    } catch (e) {
+        console.error('Error starting server:', e);
+    }
+};
+
+start();
