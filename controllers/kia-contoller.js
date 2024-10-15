@@ -12,6 +12,10 @@ class kiaController {
             console.log(e);            
         }
     }
+
+    async ping(req, res, next) {
+        return '200'
+    }
 }
 
 module.exports = new kiaController()

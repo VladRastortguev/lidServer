@@ -8,5 +8,6 @@ const router = new Router()
 router.post('/toyotanewcar', toyotaContoller.toyotaNewCar)
 router.post('/toyotabucar', toyotaContoller.toyotaBuCar)
 router.post('/kianewcar', kiaContoller.kiaNewCar)
+router.get('/ping', kiaContoller.ping)
 
 module.exports = router
