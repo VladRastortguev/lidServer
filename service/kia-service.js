@@ -16,7 +16,7 @@ class kiaServcie {
 
             return {1: 1}
         } catch(e) {
-            console.log(obj);            
+            // console.log(obj);            
 
             return e
         }
