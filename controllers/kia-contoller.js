@@ -3,6 +3,7 @@ const kiaService = require("../service/kia-service")
 class kiaController {
     async kiaNewCar(req, res, next) {
         try {    
+            console.log(req.body[0]);            
             const obj = req.body[0]                
 
             const setLid = await kiaService.setKiaNewKar(obj)
