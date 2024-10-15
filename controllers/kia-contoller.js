@@ -14,7 +14,7 @@ class kiaController {
     }
 
     async ping(req, res, next) {
-        return '200'
+        return res.json([{'ping': '200'}])
     }
 }
 
