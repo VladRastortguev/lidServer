@@ -12,7 +12,7 @@ app.use(cookiePareser())
 app.use(cors({
     credentials: true,
     origin: '*',
-    methods: 'GET, POST'
+    methods: 'GET, POST, OPTIONS'
 }))
 // app.use(function(req, res, next) {
 //     res.setHeader('Access-Control-Allow-Origin', '*')
