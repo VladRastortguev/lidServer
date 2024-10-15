@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(cookiePareser())
 app.use(cors({
     credentials: false,
-    origin: '*',
+    origin: 'https://www.kia-bishkek.kg',
     methods: 'GET, POST, OPTIONS'
 }))
 // app.use(function(req, res, next) {
