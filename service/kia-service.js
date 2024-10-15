@@ -9,7 +9,7 @@ class kiaServcie {
             }
         })
 
-        return '200'
+        return [{'result': '200'}]
     }
 }
 
