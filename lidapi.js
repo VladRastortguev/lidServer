@@ -9,11 +9,11 @@ const app = express()
 
 app.use(express.json())
 app.use(cookiePareser())
-app.use(cors({
-    credentials: false,
-    origin: 'https://www.kia-bishkek.kg',
-    methods: 'GET, POST, OPTIONS'
-}))
+// app.use(cors({
+//     credentials: false,
+//     origin: 'https://www.kia-bishkek.kg',
+//     methods: 'GET, POST, OPTIONS'
+// }))
 // app.use(function(req, res, next) {
 //     res.setHeader('Access-Control-Allow-Origin', '*')
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
